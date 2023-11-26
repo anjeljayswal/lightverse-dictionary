@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+body {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(
+    315deg,
+    rgba(101, 0, 94, 1) 3%,
+    rgba(60, 132, 206, 1) 38%,
+    rgba(48, 238, 226, 1) 68%,
+    rgba(255, 25, 25, 1) 98%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(1);
+  }
+}
+
+.container {
+  /* background: #f0f0f0; */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.box {
+  width: 0;
+  height: 0;
+  color: transparent;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0;
+  transition: transform 0.2s;
+
+  background: transparent;
+
+  box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+    2px 2px 2px #ffffff inset;
+  animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) 1s;
+  animation-fill-mode: forwards;
+ 
+}
+.box:hover {
+  transform: scale(1.2);
+  
+}
+
+@keyframes anime {
+  0% {
+    color: transparent;
+    font-size: 2px;
+    width: 60px;
+    height: 30px;
+    background: transparent;
+    box-shadow: 0 0 0 #747474, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
+      -10px -10px 10px #ffffff inset;
+  }
+  25% {
+    color: gray;
+    font-size: 8px;
+    width: 90px;
+    height: 50px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+  }
+  50% {
+    color: rgb(90, 89, 89);
+    font-size: 12px;
+    width: 140px;
+    height: 70px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+  }
+  100% {
+    font-size: 16px;
+    color: white;
+    width: 300px;
+    height: 90px;
+    margin: 5px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+      2px 2px 2px #ffffff inset;
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  line-height: 65px;
+  text-align: center;
+}
+
+.nav div.logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 3rem;
+}
+
+.nav div.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+  color: #00e676;
+}
+
+.nav div.main_list {
+  height: 65px;
+  float: right;
+}
+
+.nav div.main_list ul {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav div.main_list ul li {
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem;
+  
+}
+
+.nav div.main_list ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 65px;
+  font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+  color: #00e676;
+}
+
+input {
+  color: #f0f0f0;
+  margin: 5px;
+  padding: 10px;
+  border: #f0f0f0 2px solid;
+  background: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#mainListDiv {
+  display: flex;
+}
+
+input {
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.boxResult {
+  width: 0;
+  height: 0;
+  color: transparent;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 0;
+  transition: transform 0.2s;
+
+  background: #fafafa;
+
+  box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+    2px 2px 2px #ffffff inset;
+  animation: anim 3s cubic-bezier(0.16, 1, 0.3, 1) 1s;
+  animation-fill-mode: forwards;
+}
+.boxResult:hover {
+  transform: scale(1.2);
+}
+
+@keyframes anim {
+  0% {
+    color: transparent;
+    font-size: 2px;
+    width: 60px;
+    height: 30px;
+    padding: 50px;
+    background: transparent;
+    box-shadow: 0 0 0 #747474, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
+      -10px -10px 10px #ffffff inset;
+  }
+  25% {
+    color: rgb(153, 153, 153);
+    font-size: 8px;
+    width: 140px;
+    height: 50px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+  }
+  50% {
+    color: rgb(138, 136, 136);
+    font-size: 8px;
+    width: 240px;
+    height: 120px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+  }
+  100% {
+    padding: 50px;
+    font-size: 16px;
+    color: white;
+    width: 400px;
+    height: 180px;
+    margin: 5px;
+    background: transparent;
+    box-shadow: 10px 10px 10px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+      2px 2px 2px #ffffff inset;
+  }
+}
+
+.playBtn{
+  
+  height: 50px;
+  width: 50px;
+
+}
